@@ -1,0 +1,11 @@
+<article>
+    <h4>{{item.name}}</h4>
+    <p>{{item.price | currency}}</p>
+    <p>
+        {{item.quantity}} 
+        <button (click)="buyLess(item)">-</button>
+        <button (click)="buyMore(item)">+</button>
+    </p>
+    <p><strong>Subtotal: {{ item.price * item.quantity | currency }}</strong></p>
+    <button (click)="removeItem(item)">Remove</button>
+</article>

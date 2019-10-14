@@ -1,0 +1,64 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "inStock": true,
+            "name": "Nike Air Max",
+            "price": 125,
+            "quantity": 10,
+            "image": {
+                "baseUrl": "",
+                "caption": "",
+                "title": "",
+                "URI": {
+                    "medium": ""
+                }
+            }
+        },
+          {
+            "id": 2,
+            "inStock": true,
+            "name": "Nike Classic White Sox",
+            "price": 9.75,
+            "quantity": 4,
+            "image": {
+                "baseUrl": "",
+                "caption": "",
+                "title": "",
+                "URI": {
+                    "medium": ""
+                }
+            }
+        },
+          {
+            "id": 3,
+            "inStock": true,
+            "name": "Puma Workout Pants",
+            "price": 25,
+            "quantity": 2,
+            "image": {
+                "baseUrl": "",
+                "caption": "",
+                "title": "",
+                "URI": {
+                    "medium": ""
+                }
+            }
+        },
+          {
+            "id": 4,
+            "inStock": true,
+            "name": "Adidas Collection Shirts",
+            "price": 20,
+            "quantity": 6,
+            "image": {
+                "baseUrl": "",
+                "caption": "",
+                "title": "",
+                "URI": {
+                    "medium": ""
+                }
+            }
+        }
+    ]
+}

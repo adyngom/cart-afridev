@@ -1,0 +1,7 @@
+<input type="text" #filter (input)="filterList(filter.value)">
+<section>
+        <article *ngFor="let item of sample">
+            <h3>{{ item.name }}</h3>
+            <p>{{ item.price | currency }} per unit</p>
+        </article>
+</section>

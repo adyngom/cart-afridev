@@ -1,0 +1,14 @@
+<h3>Shopping Cart ({{numberOfItems}} items - {{ total | currency }})</h3>
+
+<div *ngIf="!numberOfItems">
+    Shopping cart is empty. Add some <a>products</a>
+</div>
+
+<div *ngIf="numberOfItems">
+    <tl-cart-item 
+    *ngFor="let item of cartItems" [item]="item" 
+    (remove)="handleRemove($event)"
+    (updateQty)="updateQuantity($event)"
+    >
+    </tl-cart-item>
+</div>
