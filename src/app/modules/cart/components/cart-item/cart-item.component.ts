@@ -23,6 +23,8 @@ export class CartItemComponent implements OnInit {
   @Output()
   updateQty: EventEmitter<UpdateItem> = new EventEmitter();
 
+  imgPath: string = '@images';
+
   constructor() { }
 
   ngOnInit() {

@@ -8,6 +8,7 @@ import { CartItem } from '../models/cart-models';
 })
 export class CartComponent implements OnInit, OnChanges {
   cartItems: CartItem[];
+  headerLabels: Array<string> = ['Product', 'Description', 'Color', 'Size', 'Price', 'Qty', 'Amount', ''];
   constructor() { }
 
   ngOnInit() {
@@ -15,30 +16,58 @@ export class CartComponent implements OnInit, OnChanges {
       {
         id: 1,
         inStock: true,
-        name: 'Nike Air Max',
+        name: 'Adidas Pro Series',
         price: 125,
-        quantity: 1
+        quantity: 1,
+        image: {
+          baseUrl: "prod_17_adidas_pro.jpg"
+        },
+        options: {
+          size: "13",
+          color: "W/B"
+        }
       },
       {
         id: 2,
         inStock: true,
-        name: 'Nike Classic White Sox',
+        name: 'Blucher Marron',
         price: 9.75,
-        quantity: 3
+        quantity: 3,
+        image: {
+          baseUrl: "prod_9_blucher_marron.jpg"
+        },
+        options: {
+          size: "13",
+          color: "Brown"
+        }
       },
       {
         id: 3,
         inStock: true,
-        name: 'Puma Workout Pants',
+        name: 'Puma Ferrari Beige',
         price: 25,
-        quantity: 1
+        quantity: 1,
+        image: {
+          baseUrl: "prod_19_puma_ferrari_rouge_beige.jpg"
+        },
+        options: {
+          size: "13",
+          color: "Beige"
+        }
       },
       {
         id: 4,
         inStock: true,
-        name: 'Adidas Collection Shirts',
+        name: 'Feozyz Gris Noir',
         price: 20,
-        quantity: 3
+        quantity: 3,
+        image: {
+          baseUrl: "prod_15_feozyz.jpg"
+        },
+        options: {
+          size: "13",
+          color: "Grey"
+        }
       }
     ]
   }

@@ -10,7 +10,11 @@
     <button (click)="removeItem(item)">Remove</button>
 </article> -->
 
-    <td></td>
+    <td>
+        <figure>
+            <img src="../../../../../assets/images/{{item.image.baseUrl}}" alt="">
+        </figure>
+    </td>
     <td>
         <h3 class="item-detail item-title">
             {{item.name}}
@@ -20,10 +24,10 @@
         </p>
     </td>
     <td>
-        <h4 class="item-detail">Otto</h4>
+        <h4 class="item-detail">{{item.options?.color}}</h4>
     </td>
     <td>
-        <h4 class="item-detail">Otto</h4>
+        <h4 class="item-detail">{{item.options?.size}}</h4>
     </td>
     <td>
         <h4 class="item-detail">

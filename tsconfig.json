@@ -17,7 +17,10 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@images": ["src/assets/images"]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

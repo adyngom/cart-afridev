@@ -1,8 +1,12 @@
+export interface ProductOptions {
+    size?: string;
+    color?: string
+}
 export interface CartImage {
     baseUrl: string;
-    caption: string | null;
-    title: string;
-    URI: {
+    caption?: string | null;
+    title?: string;
+    URI?: {
         small?: string;
         medium: string;
         large?: string;
@@ -15,5 +19,6 @@ export interface CartItem {
     price: number;
     quantity: number;
     inStock: boolean;
-    image?: CartImage
+    image?: CartImage,
+    options?: ProductOptions
 }

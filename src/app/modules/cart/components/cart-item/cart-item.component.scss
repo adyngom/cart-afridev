@@ -1,5 +1,13 @@
 @import '../../../../../variables.scss';
 
+figure {
+    width: 100px;
+}
+
+img {
+    max-width: 100%;
+}
+
 .item-detail {
     font-size: 13px;
     font-weight: bold;

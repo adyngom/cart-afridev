@@ -5,27 +5,11 @@
     Shopping cart is empty. Add some <a>products</a>
 </div>
 
-<!-- <div *ngIf="numberOfItems">
-    <tl-cart-item 
-    *ngFor="let item of cartItems" [item]="item" 
-    (remove)="handleRemove($event)"
-    (updateQty)="updateQuantity($event)"
-    >
-    </tl-cart-item>
-</div> -->
 
 <table class="table" *ngIf="numberOfItems">
-    <thead class="thead-dark tlc-dark table-head">
-      <tr>
-        <th scope="col">Product</th>
-        <th scope="col">Description</th>
-        <th scope="col">Color</th>
-        <th scope="col">Size</th>
-        <th scope="col">Price</th>
-        <th scope="col">Qty</th>
-        <th scope="col">Amount</th>
-        <th scope="col"></th>
-      </tr>
+    <thead 
+        cart-table-head class="thead-dark tlc-dark table-head" 
+        [headerLabels]="headerLabels">
     </thead>
     <tbody>
         <tr cart-item 
@@ -37,3 +21,17 @@
     </tbody>
   </table>
 </div>
+
+<!-- <table cart-table class="table" *ngIf="numberOfItems">
+    <thead cart-table-head class="thead-dark tlc-dark table-head" [labels]="labels"></thead>
+    <tbody>
+        <tr cart-item 
+            *ngFor="let item of cartItems" 
+            [item]="item" 
+            (remove)="handleRemove($event)"
+            (updateQty)="updateQuantity($event)"
+        >
+        </tr>
+    </tbody>
+    <tfoot cart-table-foot></tfoot>
+</table> -->
