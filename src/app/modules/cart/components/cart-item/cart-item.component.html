@@ -1,4 +1,4 @@
-<article>
+<!-- <article>
     <h4>{{item.name}}</h4>
     <p>{{item.price | currency}}</p>
     <p>
@@ -8,4 +8,36 @@
     </p>
     <p><strong>Subtotal: {{ item.price * item.quantity | currency }}</strong></p>
     <button (click)="removeItem(item)">Remove</button>
-</article>
+</article> -->
+
+    <td></td>
+    <td>
+        <h3 class="item-detail item-title">
+            {{item.name}}
+        </h3>
+        <p class="item-summary">
+                Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+        </p>
+    </td>
+    <td>
+        <h4 class="item-detail">Otto</h4>
+    </td>
+    <td>
+        <h4 class="item-detail">Otto</h4>
+    </td>
+    <td>
+        <h4 class="item-detail">
+           {{item.price | currency}} 
+        </h4>
+    </td>
+    <td>
+        <h4 class="item-detail">
+            {{item.quantity}}
+        </h4>
+    </td>
+    <td>
+        <h4 class="item-detail">
+            {{ item.price * item.quantity | currency }}
+        </h4>    
+    </td>
+    <td><button (click)="removeItem(item)">x</button></td>

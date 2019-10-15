@@ -7,7 +7,7 @@ export interface UpdateItem {
 }
 
 @Component({
-  selector: 'tl-cart-item',
+  selector: '[cart-item]',
   templateUrl: './cart-item.component.html',
   styleUrls: ['./cart-item.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush

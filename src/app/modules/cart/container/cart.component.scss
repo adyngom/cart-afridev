@@ -1,0 +1,20 @@
+$success: #95c320;
+$danger: #f04d4e;
+$info: #00bff3;
+$primary: #1f1f1d;
+$bg-main: #3883f4;
+$caption: #999999;
+
+
+body {
+    background-color: $bg-main;
+    margin: 0;
+    padding: 60px 30px;
+}
+
+.table {
+    background-color: #fff;
+}
+.tlc-dark {
+    background-color: $primary;
+}
