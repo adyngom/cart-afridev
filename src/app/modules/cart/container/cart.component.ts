@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CartItem } from '../models/cart-models';
+import { isNotEmpty, getTotalPrice } from '../../../../utils';
 
 @Component({
   selector: 'tl-cart',
@@ -86,34 +87,33 @@ export class CartComponent implements OnInit {
     return this.cartItems.length;
   }
 
-  get total(): number {
-    let price = 0;
-    this.cartItems.map( (item:CartItem) =>  {
-      price += (item.price * item.quantity); 
-      return item;
-    });
-    return price;
+  get total(): any {
+    return this.cartItems.reduce( getTotalPrice, 0 );
   }
 
   handleRemove(item: CartItem) {
     this.cartItems = this.cartItems.filter( cartItem => cartItem.id !== item.id);
   }
 
-  private newQuantity(item: CartItem) {
-    
-  }
-
-  updateQuantity(product: any): void {
+  handleUpdateQuantity(product: any): void {
     const { item, action } = product;
-    this.cartItems = this.cartItems
-    .map( cartItem => {
-      if( cartItem.id === item.id) {
-        item.quantity = (action === "more") ? item.quantity + 1 
-                        : (item.quantity > 0) ? item.quantity - 1 : 0;
-      }
-      return cartItem;
-    })
-    .filter( item => item.quantity !== 0);
+    item.quantity = (action === "more") 
+                    ? item.quantity + 1 : (item.quantity > 0) 
+                    ? item.quantity - 1 : 0;
+
+    this.cartItems = Object.assign( this.cartItems, item ).filter( isNotEmpty );
+
+    /** 
+      this.cartItems = this.cartItems
+      .map( cartItem => {
+        if( cartItem.id === item.id) {
+          item.quantity = (action === "more") ? item.quantity + 1 
+                          : (item.quantity > 0) ? item.quantity - 1 : 0;
+        }
+        return cartItem;
+      })
+      .filter( isNotEmpty );
+    */
   }
 
 }

@@ -1,47 +1,39 @@
-<!-- <article>
-    <h4>{{item.name}}</h4>
-    <p>{{item.price | currency}}</p>
-    <p>
-        {{item.quantity}} 
+<td>
+    <figure>
+        <img src="../../../../../assets/images/{{item.image.baseUrl}}" alt="">
+    </figure>
+</td>
+<td>
+    <h3 class="item-detail item-title">
+        {{item.name}}
+    </h3>
+    <p class="item-summary">
+            Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+    </p>
+</td>
+<td>
+    <h4 class="item-detail">{{item.options?.color}}</h4>
+</td>
+<td>
+    <h4 class="item-detail">{{item.options?.size}}</h4>
+</td>
+<td>
+    <h4 class="item-detail">
+        {{item.price | currency}} 
+    </h4>
+</td>
+<td>
+    <h4 class="item-detail">
+        {{item.quantity}}
+    </h4>
+    <div class="btn-block btn-group">
         <button (click)="buyLess(item)">-</button>
         <button (click)="buyMore(item)">+</button>
-    </p>
-    <p><strong>Subtotal: {{ item.price * item.quantity | currency }}</strong></p>
-    <button (click)="removeItem(item)">Remove</button>
-</article> -->
-
-    <td>
-        <figure>
-            <img src="../../../../../assets/images/{{item.image.baseUrl}}" alt="">
-        </figure>
-    </td>
-    <td>
-        <h3 class="item-detail item-title">
-            {{item.name}}
-        </h3>
-        <p class="item-summary">
-                Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
-        </p>
-    </td>
-    <td>
-        <h4 class="item-detail">{{item.options?.color}}</h4>
-    </td>
-    <td>
-        <h4 class="item-detail">{{item.options?.size}}</h4>
-    </td>
-    <td>
-        <h4 class="item-detail">
-           {{item.price | currency}} 
-        </h4>
-    </td>
-    <td>
-        <h4 class="item-detail">
-            {{item.quantity}}
-        </h4>
-    </td>
-    <td>
-        <h4 class="item-detail">
-            {{ item.price * item.quantity | currency }}
-        </h4>    
-    </td>
-    <td><button (click)="removeItem(item)">x</button></td>
+    </div>
+</td>
+<td>
+    <h4 class="item-detail">
+        {{ item.price * item.quantity | currency }}
+    </h4>    
+</td>
+<td><button (click)="removeItem(item)">x</button></td>

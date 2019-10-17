@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter, ChangeDetectionStrategy} from '@angular/core';
+import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy} from '@angular/core';
 import { CartItem } from '../../models/cart-models';
 
 export interface UpdateItem {
@@ -12,7 +12,7 @@ export interface UpdateItem {
   styleUrls: ['./cart-item.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class CartItemComponent implements OnInit {
+export class CartItemComponent {
 
   @Input() 
   item: CartItem;
@@ -23,12 +23,7 @@ export class CartItemComponent implements OnInit {
   @Output()
   updateQty: EventEmitter<UpdateItem> = new EventEmitter();
 
-  imgPath: string = '@images';
-
   constructor() { }
-
-  ngOnInit() {
-  }
 
   removeItem(item: CartItem): void {
     this.remove.emit(item);

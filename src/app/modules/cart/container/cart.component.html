@@ -1,38 +1,22 @@
 <div class="container">
-<h3>Shopping Cart ({{numberOfItems}} items - {{ total | currency }})</h3>
+    <h3>Shopping Cart ({{numberOfItems}} items - {{ total | currency }})</h3>
 
-<div *ngIf="!numberOfItems">
-    Shopping cart is empty. Add some <a>products</a>
+    <div *ngIf="!numberOfItems">
+        Shopping cart is empty. Add some <a>products</a>
+    </div>
+
+    <table class="table" *ngIf="numberOfItems">
+        <thead cart-table-head class="thead-dark tlc-dark table-head" 
+               [headerLabels]="headerLabels">
+        </thead>
+        <tbody>
+            <tr cart-item *ngFor="let item of cartItems" 
+                [item]="item" 
+                (remove)="handleRemove($event)"
+                (updateQty)="handleUpdateQuantity($event)"
+            >
+            </tr>
+        </tbody>
+        <tfoot cart-table-foot></tfoot>
+    </table>
 </div>
-
-
-<table class="table" *ngIf="numberOfItems">
-    <thead 
-        cart-table-head class="thead-dark tlc-dark table-head" 
-        [headerLabels]="headerLabels">
-    </thead>
-    <tbody>
-        <tr cart-item 
-            *ngFor="let item of cartItems" [item]="item" 
-            (remove)="handleRemove($event)"
-            (updateQty)="updateQuantity($event)"
-        >
-    </tr>
-    </tbody>
-    <tfoot cart-table-foot></tfoot>
-  </table>
-</div>
-
-<!-- <table cart-table class="table" *ngIf="numberOfItems">
-    <thead cart-table-head class="thead-dark tlc-dark table-head" [labels]="labels"></thead>
-    <tbody>
-        <tr cart-item 
-            *ngFor="let item of cartItems" 
-            [item]="item" 
-            (remove)="handleRemove($event)"
-            (updateQty)="updateQuantity($event)"
-        >
-        </tr>
-    </tbody>
-    <tfoot cart-table-foot></tfoot>
-</table> -->
