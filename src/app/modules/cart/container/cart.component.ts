@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CartItem } from '../models/cart-models';
 
 @Component({
@@ -6,9 +6,19 @@ import { CartItem } from '../models/cart-models';
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.scss']
 })
-export class CartComponent implements OnInit, OnChanges {
+export class CartComponent implements OnInit {
   cartItems: CartItem[];
-  headerLabels: Array<string> = ['Product', 'Description', 'Color', 'Size', 'Price', 'Qty', 'Amount', ''];
+  headerLabels: Array<string> = [
+    'Product', 
+    'Description', 
+    'Color', 
+    'Size', 
+    'Price', 
+    'Qty', 
+    'Amount', 
+    ''
+  ];
+  
   constructor() { }
 
   ngOnInit() {
@@ -70,12 +80,6 @@ export class CartComponent implements OnInit, OnChanges {
         }
       }
     ]
-  }
-
-  ngOnChanges(changes) {
-    console.group('OnChanges');
-      console.log(changes);
-    console.groupEnd();
   }
 
   get numberOfItems(): number {
