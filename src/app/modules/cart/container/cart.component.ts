@@ -42,8 +42,8 @@ export class CartComponent implements OnInit {
         id: 2,
         inStock: true,
         name: 'Blucher Marron',
-        price: 9.75,
-        quantity: 3,
+        price: 79.75,
+        quantity: 1,
         image: {
           baseUrl: "prod_9_blucher_marron.jpg"
         },
@@ -56,7 +56,7 @@ export class CartComponent implements OnInit {
         id: 3,
         inStock: true,
         name: 'Puma Ferrari Beige',
-        price: 25,
+        price: 45,
         quantity: 1,
         image: {
           baseUrl: "prod_19_puma_ferrari_rouge_beige.jpg"
@@ -70,8 +70,8 @@ export class CartComponent implements OnInit {
         id: 4,
         inStock: true,
         name: 'Feozyz Gris Noir',
-        price: 20,
-        quantity: 3,
+        price: 60,
+        quantity: 2,
         image: {
           baseUrl: "prod_15_feozyz.jpg"
         },
@@ -95,15 +95,15 @@ export class CartComponent implements OnInit {
     this.cartItems = this.cartItems.filter( cartItem => cartItem.id !== item.id);
   }
 
-  handleUpdateQuantity(product: any): void {
-    const { item, action } = product;
-    item.quantity = (action === "more") 
-                    ? item.quantity + 1 : (item.quantity > 0) 
-                    ? item.quantity - 1 : 0;
+  handleUpdateQuantity(product: { item: CartItem, action: string}): void {
+    const { item , action } = product;
+    // item.quantity = (action === "more") 
+    //                 ? item.quantity + 1 : (item.quantity > 0) 
+    //                 ? item.quantity - 1 : 0;
 
-    this.cartItems = Object.assign( this.cartItems, item ).filter( isNotEmpty );
+    // this.cartItems = { ...this.cartItems,  item }
+    // //.filter( isNotEmpty );
 
-    /** 
       this.cartItems = this.cartItems
       .map( cartItem => {
         if( cartItem.id === item.id) {
@@ -113,7 +113,7 @@ export class CartComponent implements OnInit {
         return cartItem;
       })
       .filter( isNotEmpty );
-    */
+    
   }
 
 }

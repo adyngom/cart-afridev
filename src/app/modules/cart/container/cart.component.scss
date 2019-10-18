@@ -13,3 +13,11 @@ body {
 .tlc-dark {
     background-color: $primary;
 }
+
+.cart-title {
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 24px;
+    text-align: right;
+    text-shadow: 1px 1px 1px #000;
+}

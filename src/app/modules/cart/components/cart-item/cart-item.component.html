@@ -10,6 +10,11 @@
     <p class="item-summary">
             Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
     </p>
+    <div class="btn-block btn-group">
+        <button (click)="buyLess(item)" class="btn btn-danger">Remove pair</button>
+        &nbsp;&nbsp;
+        <button (click)="buyMore(item)" class="btn btn-success">Add xtra pair</button>
+    </div>
 </td>
 <td>
     <h4 class="item-detail">{{item.options?.color}}</h4>
@@ -26,14 +31,10 @@
     <h4 class="item-detail">
         {{item.quantity}}
     </h4>
-    <div class="btn-block btn-group">
-        <button (click)="buyLess(item)">-</button>
-        <button (click)="buyMore(item)">+</button>
-    </div>
 </td>
 <td>
     <h4 class="item-detail">
         {{ item.price * item.quantity | currency }}
     </h4>    
 </td>
-<td><button (click)="removeItem(item)">x</button></td>
+<td><a (click)="removeItem(item)" class="a-danger">x</a></td>

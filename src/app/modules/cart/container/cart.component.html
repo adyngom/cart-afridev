@@ -1,5 +1,5 @@
 <div class="container">
-    <h3>Shopping Cart ({{numberOfItems}} items - {{ total | currency }})</h3>
+    <h3 class="page-title cart-title">Shopping Cart ({{numberOfItems}} items - {{ total | currency }})</h3>
 
     <div *ngIf="!numberOfItems">
         Shopping cart is empty. Add some <a>products</a>
@@ -17,6 +17,7 @@
             >
             </tr>
         </tbody>
-        <tfoot cart-table-foot></tfoot>
+        <!-- <tfoot cart-table-foot></tfoot> -->
     </table>
+    
 </div>
